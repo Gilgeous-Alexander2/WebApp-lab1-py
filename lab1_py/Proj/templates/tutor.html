@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}Заказ №{{ data.id }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <img src="{% static 'pics/1.jpeg' %}" style="border: solid 6px grey;" alt="{{order.id}}"/>
+        <br/>
+        <div class="Text " >{{ data.id }}</div>
+        <div class="Text " >{{ teacher.name2 }}</div>
+        <div class="Text green" style="line-height: 45px;">{{data.rank}}</div>
+        <div class="Text green" >{{teacher.rank2}}</div>
+
+        
+    </div>
+{% endblock %}

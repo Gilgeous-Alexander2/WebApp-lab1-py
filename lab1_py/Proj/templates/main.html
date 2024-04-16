@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" class="h-100" style="font-size: 20px;">
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/App.css' %}">
+
+    <meta charset="utf-8">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <mdiv class="Header" >
+            <div class="Text logo" >ИСиТ</div>
+            <div style="display:flex;flex-grow: 1;"></div>
+            <div class="Perehodniki"  >
+                <a class="Text perehod" href='#raspis'>расписание</a>
+                <a class="Text perehod" href='#Sotrud'>сотрудники</a>
+                <a class="Text perehod" href='#napravleniya'>направления</a>
+                <a class="Text perehod" href='#dostizh'>достижения</a>
+            </div>
+        </div>
+    </header>
+
+    {% block content %} {% endblock %}
+    
+
+</body>
+
+</html>
