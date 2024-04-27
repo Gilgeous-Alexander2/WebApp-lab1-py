@@ -13,20 +13,20 @@
 <body>
     <header>
         <mdiv class="Header" >
-            <div class="Text logo" >ИСиТ</div>
+            <div class="Text logo" ><a href="/" style="text-decoration: none;color:black">ИСиТ</a></div>
             <div style="display:flex;flex-grow: 1;"></div>
             <div class="Perehodniki"  >
                 <a class="Text perehod" href='#raspis'>расписание</a>
                 <a class="Text perehod" href='#Sotrud'>сотрудники</a>
                 <a class="Text perehod" href='#napravleniya'>направления</a>
-                <a class="Text perehod" href='#dostizh'>достижения</a>
+                <a class="Text perehod" href="{% url 'consult'  %}">Запись на консультацию</a>
             </div>
         </div>
     </header>
 
     {% block content %} {% endblock %}
     
-
+    
 </body>
 
 </html>

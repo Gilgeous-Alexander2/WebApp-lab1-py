@@ -22,6 +22,9 @@ from Proj import view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', view.GetTutors),
+    path('consultation', view.Consult,name='consult'),
     path('order/<int:id>/', view.GetTutor, name='order_url'),
+    path('sendText', view.sendText, name='search_result'),
+
 
 ]

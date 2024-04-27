@@ -25,10 +25,10 @@
                 <div class="card">
                     <img src="{% static 'pics/1.jpeg' %}" style="border: solid 6px grey;" alt="{{order.id}}"/>
                     <br/>
-                    <div class="Text " >{{ teacher.name1 }}</div>
-                    <div class="Text " >{{ teacher.name2 }}</div>
-                    <div class="Text green" style="line-height: 45px;">{{teacher.rank1}}</div>
-                    <div class="Text green" >{{teacher.rank2}}</div>
+                    <div class="Text " >{{ teacher.first_name }}</div>
+                    <div class="Text " >{{ teacher.second_name }}</div>
+                    <div class="Text green" style="line-height: 45px;">{{teacher.degree1}}</div>
+                    <div class="Text green" >{{teacher.degree2}}</div>
 
                     
                 </div>
@@ -38,4 +38,10 @@
         <li>Список пуст</li>
     {% endfor %}
 </ul>
+
+<!-- <form action="sendText" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input name="text" type="text"><br><br>
+    <input type="submit" value="Submit" >
+</form> -->
 {% endblock %}
