@@ -19,7 +19,6 @@ def add_pic(new_stock, pic):
     )
     i = new_stock.id
     img_obj_name = f"{i}.png"
-
     if not pic:
         return Response({"error": "Нет файла для изображения логотипа."})
     result = process_file_upload(pic, client, img_obj_name)
@@ -31,3 +30,4 @@ def add_pic(new_stock, pic):
     new_stock.save()
 
     return Response({"message": "success"})
+
