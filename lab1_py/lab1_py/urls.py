@@ -16,15 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Proj import view
+from proj import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', view.GetTutors),
-    path('consultation', view.Consult,name='consult'),
-    path('order/<int:id>/', view.GetTutor, name='order_url'),
-    path('sendText', view.sendText, name='search_result'),
+    path('', views.GetTutors),
+    path('consultation', views.Consult,name='consult'),
+    path('order/<int:id>/', views.GetTutor, name='order_url'),
+    path('sendText', views.sendText, name='search_result'),
 
 
 ]

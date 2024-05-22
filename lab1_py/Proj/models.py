@@ -8,7 +8,5 @@ class Teachers(models.Model):
     degree1 = models.CharField(blank=True, null=True)
     degree2 = models.CharField(blank=True, null=True)
 
-    class Meta:
-        app_label = 'Proj.models'
-        managed = False
-        db_table = 'teachers'
+    
+    
