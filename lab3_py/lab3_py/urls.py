@@ -38,22 +38,36 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
+
 urlpatterns = [
     path('', include(router.urls)),
     path(r'stocks/', views.StockList.as_view(), name='stocks-list'),
     path(r'stocks/<int:pk>/', views.StockDetail.as_view(), name='stocks-detail'),
     path(r'stocks/<int:pk>/put/', views.put_detail, name='stocks-put'),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
-    path(r'users/', views.UsersList.as_view(), name='users-list'),
-    path(r'teachers/', views.TeachersList.as_view(), name='teachers-list'),
-    path(r'teachers/<int:pk>/', views.TeacherDetail.as_view(), name='teacher-detail'),
+    # path(r'users/', views.UsersList.as_view(), name='users-list'),
+    # path(r'teachers/', views.TeachersList.as_view(), name='teachers-list'),
+    # path(r'teachers/<int:pk>/', views.TeacherDetail.as_view(), name='teacher-detail'),
     path(r'subjects/', views.SubjectsList.as_view(), name='subjects-list'),
+    path(r'subjects/<int:id>', views.SubjectsDetail.as_view(), name='subjects-detail'),
+
     path(r'uslugi/', views.UslugiList.as_view(), name='uslugi-list'),
     path(r'uslugi/<int:pk>/', views.UslugiDetail.as_view(), name='uslugi-detail'),
     path(r'uslugi/post/', views.PostStock.as_view(), name='uslugi-list'),
 
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+
+    path('register', views.UserRegister.as_view(), name='register'),
+	path('login', views.UserLogin.as_view(), name='login'),
+	path('logout', views.UserLogout.as_view(), name='logout'),
+	path('user/', views.UserView.as_view(), name='user'),
+    path('userslist/', views.UsersList.as_view(), name='user'),
+    path('teacherslist/', views.TeachersList.as_view(), name='teacher'),
+    path('teacherslist/<int:user_id>/', views.TeachersDetail.as_view(), name='teacher'),
+
+    path('userslist/<int:user_id>/', views.UsersDetail.as_view(), name='user'),
+
+
 
 
 

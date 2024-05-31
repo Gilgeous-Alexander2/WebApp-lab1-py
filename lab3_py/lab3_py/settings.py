@@ -27,6 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+]
+CORS_ALLOWED_CREDENTIALS = True
+
+AUTH_USER_MODEL= 'stocks.AppUser'
+
 
 # Application definition
 
@@ -40,10 +48,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'stocks',
+    'corsheaders',
 
 ]
 
+
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -135,3 +147,10 @@ AWS_ACCESS_KEY_ID = 'minioadmin'
 AWS_SECRET_ACCESS_KEY = 'minioadmin'
 AWS_S3_ENDPOINT_URL = 'localhost:9000'
 MINIO_USE_SSL = False
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}

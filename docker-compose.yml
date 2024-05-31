@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    python:
+        image: python:3.10
+        volumes:
+            - ./lab3_py:/lab3_py
+        ports:
+            - 8000:8000
+        command: bash -c "cd ./lab3_py && pip install -r requirements.txt && python manage.py migrate && python manage.py runserver"
